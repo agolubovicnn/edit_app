@@ -42,8 +42,6 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.3.pre1)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.2.0.0)
-      sass (~> 3.2)
     builder (3.2.2)
     byebug (3.4.0)
       columnize (~> 0.8)
@@ -71,6 +69,7 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     columnize (0.9.0)
+    commonjs (0.2.7)
     concurrent-ruby (1.0.2)
     cucumber (2.4.0)
       builder (>= 2.1.2)
@@ -135,6 +134,12 @@ GEM
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    less (2.2.2)
+      commonjs (~> 0.2.6)
+    less-rails (2.2.6)
+      actionpack (>= 3.1)
+      less (~> 2.2.0)
+    libv8 (3.3.10.4)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -239,11 +244,18 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.9)
+    therubyracer (0.10.2)
+      libv8 (~> 3.3.10)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
     turbolinks (2.3.0)
       coffee-rails
+    twitter-bootstrap-rails (2.1.3)
+      actionpack (>= 3.1)
+      less-rails (~> 2.2.3)
+      railties (>= 3.1)
+      therubyracer (~> 0.10.2)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
@@ -263,7 +275,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (= 3.2.0.0)
   byebug (= 3.4.0)
   capybara
   carrierwave
@@ -288,9 +299,10 @@ DEPENDENCIES
   spring (= 1.1.3)
   sqlite3 (= 1.3.9)
   turbolinks (= 2.3.0)
+  twitter-bootstrap-rails (= 2.1.3)
   tzinfo-data
   uglifier (= 2.5.3)
   web-console (= 2.0.0.beta3)
 
 BUNDLED WITH
-   1.12.4
+   1.12.5
