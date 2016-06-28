@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @character.image.url(:thumb_lg), class: "center-block" %>
+<h1><%= @character.char_name %></h1>
+<div class="ajax-form-atr clearfix">
+	<%= link_to 'New Character Attributes', new_character_for_attribute_path(@character) , role: 'button', id: "new_atr_link", class: 'btn btn-warning move_link', remote: false %>
+</div>
+<div class="table-block clearfix">
+
+
+	<table class="table">
+		<tr>
+			<th class="col-sm-2">Avatar</th>
+			<th class="col-sm-2">Value</th>
+			<th class="col-sm-4">Name</th>
+			<th class="col-sm-2">Delete Attribute</th>
+			<th class="col-sm-2">Update Attribute</th>
+		</tr>
+		<% @for_attributes.each do |for_attribute| %>
+		<tr id="<%= for_attribute.id %>">
+			<%= render for_attribute %>
+		</tr>
+		<% end %>
+	</table>
+
+	<div class="move_link">
+		<%= link_to 'Edit', new_character_for_attribute_path(@character) %>
+		<%= link_to 'Back', characters_path %>
+	</div>
+</div>

@@ -1,0 +1,3 @@
+$('#edit_for_attribute_<%= @for_attribute.id %>').remove();
+$('#new_atr_link').show();
+$('#<%= @for_attribute.id %>').html("<%= escape_javascript(render(@for_attribute)) %>");

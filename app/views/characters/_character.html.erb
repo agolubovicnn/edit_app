@@ -1,0 +1,5 @@
+<td><%= image_tag character.image.url(:thumb) if character.image? %></td>
+<td><strong><%= link_to character.char_name, character_path(character) %></strong></td>
+<td><%= link_to 'Delete', character_path(character) , data: {confirm: "Are You Sure?"}, method: :delete, remote: true,  class: 'btn btn-danger' %>
+</td>
+<td><%= link_to 'Edit', edit_character_path(character), role: 'button', id: 'edit_char', class: 'btn btn-info', remote: true %></td>

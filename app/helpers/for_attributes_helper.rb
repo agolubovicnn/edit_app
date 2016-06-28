@@ -1,0 +1,2 @@
+module ForAttributesHelper
+end

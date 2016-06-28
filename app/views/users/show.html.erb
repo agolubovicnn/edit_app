@@ -1,0 +1,9 @@
+<% provide(:title, @user.user_name) %>
+<h1>Welcome <%= @user.user_name %></h1>
+<h2>You have <%= pluralize(@characters.count, 'character') %> created</h2>
+<p>You can create new, delete or edit old ones here: <%= link_to 'Your Characters', characters_path, role: 'button', class: 'btn btn-primary' %>
+
+
+
+
+

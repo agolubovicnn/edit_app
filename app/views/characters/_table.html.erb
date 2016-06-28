@@ -1,0 +1,19 @@
+<thead>
+  <tr>
+    <th class="col-sm-2">Avatar</th>
+    <th class="col-sm-6">Name</th>
+    <th class="col-sm-2">Delete Character</th>
+    <th class="col-sm-2">Update Character</th>
+  </tr>
+</thead>
+<tbody>
+  <% @characters.each do |character| %>
+  <tr id="<%= character.id %>">
+    <td><%= image_tag character.image.url(:thumb) if character.image? %></td>
+    <td><strong><%= link_to character.char_name, character_path(character) %></strong></td>
+    <td><%= link_to 'Delete', character_path(character) , data: {confirm: "Are You Sure?"}, method: :delete, remote: true,  class: 'btn btn-danger' %>
+    </td>
+    <td><%= link_to 'Edit', edit_character_path(character), role: 'button', id: 'edit_char', class: 'btn btn-info', remote: true %></td>
+  </tr>
+  <% end %>
+</tbody>

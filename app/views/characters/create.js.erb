@@ -1,0 +1,7 @@
+<% if @character.errors.any? %>
+$(".ajax-form").html("<%= escape_javascript (render ("form_new")) %>");
+<% else	%>
+$('table').html("<%= escape_javascript (render ("table")) %>");
+$('#new_character').remove();
+$('#new_link').show();
+<% end %>

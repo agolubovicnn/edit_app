@@ -1,0 +1,11 @@
+<h1>Your Characters</h1>
+<div class="ajax-form clearfix">
+  <%= link_to 'New Character', new_character_path, id: 'new_link', class: 'btn btn-warning', remote: false %>
+</div>
+<div class="table-block clearfix">
+  <%= paginate @characters %>
+  <table class="table">
+    <%= render partial: "table" %>
+  </table>
+  <%= link_to 'Back', static_pages_index_path %>
+</div>
