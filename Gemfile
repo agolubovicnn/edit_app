@@ -15,6 +15,7 @@ gem 'carrierwave'
 gem 'kaminari'
 gem 'less-rails-bootstrap'
 gem 'therubyracer'
+gem 'json', '1.8.3'
 
 group :assets do
   gem 'twitter-bootstrap-rails'
@@ -42,7 +43,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-
+  gem 'rspec-rails', '~> 3.4.2'
   gem 'cucumber-rails', :require => false
   gem 'cucumber'
   gem 'capybara'
