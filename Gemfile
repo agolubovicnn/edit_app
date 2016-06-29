@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
-
 gem 'rails',        '4.2.2'
-gem 'twitter-bootstrap-rails', '2.1.3'
+gem 'bootstrap-sass',       '3.2.0.0'
 gem 'devise'
 gem 'sass-rails',   '5.0.2'
 gem 'uglifier',     '2.5.3'
@@ -14,6 +13,12 @@ gem 'sdoc',         '0.4.0', group: :doc
 gem 'rmagick'
 gem 'carrierwave'
 gem 'kaminari'
+gem 'less-rails-bootstrap'
+gem 'therubyracer'
+
+group :assets do
+  gem 'twitter-bootstrap-rails'
+end
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
