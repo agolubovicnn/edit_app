@@ -1,4 +1,4 @@
-<%= form_for([@user,@character, @for_attribute], html: {  multipart: true, remote: true  }, remote: true) do |f| %>
+<%= form_for([@user,@character, @for_attribute], html: {  multipart: true, remote: true  }, remote: true ) do |f| %>
 <div class="field">
   <%= f.label :name, 'Character Name' %><br>
   <%= f.text_field :name %>

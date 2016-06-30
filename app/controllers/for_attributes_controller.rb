@@ -2,7 +2,7 @@ class ForAttributesController < ApplicationController
   before_filter :authenticate_user!
   before_action :set_for_attribute, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :js
 
   def index
     @character = Character.find(params[:character_id])

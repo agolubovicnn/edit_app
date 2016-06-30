@@ -16,6 +16,7 @@ gem 'kaminari'
 gem 'less-rails-bootstrap'
 gem 'therubyracer'
 gem 'json', '1.8.3'
+gem 'remotipart', '~> 1.2'
 
 group :assets do
   gem 'twitter-bootstrap-rails'
