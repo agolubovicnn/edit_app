@@ -1,0 +1,3 @@
+$('#new_character').remove();
+$('#edit_character_<%= @character.id %>').remove();
+$('#new_link').hide().after('<%= escape_javascript(render ("form_new")) %>');

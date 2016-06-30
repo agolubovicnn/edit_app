@@ -1,0 +1,28 @@
+<%= form_for [@user, @character, @for_attribute] do |f| %>
+<% if @for_attribute.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@for_attribute.errors.count, "error") %> prohibited this for_attribute from being saved:</h2>
+
+  <ul>
+    <% @for_attribute.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :name, class: "form-group" %><br>
+  <%= f.text_field :name, class: "form-control" %>
+</div>
+<div class="field">
+  <%= f.label :value, class: "form-group" %><br>
+  <%= f.number_field :value, class: "form-control" %>
+</div>
+
+<%= f.file_field :image %>
+
+<div class="actions">
+  <%= f.submit class: "btn btn-block btn-warning" %>
+</div>
+<% end %>

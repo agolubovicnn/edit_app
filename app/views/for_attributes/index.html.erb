@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @character.char_name %></h1>
+<div class="ajax-form-atr clearfix">
+  <%= link_to 'New Attribute', new_user_character_for_attribute_path(@user,@character), id: 'new_atr_link', class: 'btn btn-warning', remote: true %>
+</div>
+
+<div class="table-block clearfix">
+  <%= paginate @for_attributes %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="col-sm-2">Avatar</th>
+        <th class="col-sm-4">Name</th>
+        <th class="col-sm-2">Value</th>
+        <th class="col-sm-2">Delete Attribute</th>
+        <th class="col-sm-2">Update Attribute</th>
+      </tr>
+      <% @for_attributes.each do |for_attribute| %>
+      <tr id="<%= for_attribute.id %>">
+        <%= render for_attribute %>
+      </tr>
+      <% end %>
+    </thead>
+  </table>
+  <%= link_to 'Back', user_characters_path %>
+</div>

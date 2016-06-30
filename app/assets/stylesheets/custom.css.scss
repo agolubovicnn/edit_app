@@ -1,0 +1,166 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$gray-medium-light: #eaeaea;
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+body {
+  padding-top: 60px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  text-align: center;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #F0AD4E;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #EEA236;
+  text-decoration: none;
+}
+
+/* form */
+
+.form-group {
+  margin: 0 auto;
+  max-width: 350px;
+}
+
+.ajax-form, .ajax-form-atr {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2% 2% 2%;
+}
+
+.ajax-form input {
+  display: inline-block;
+  float: left;
+  width: 33.3%;
+}
+
+.ajax-form-atr .field  {
+    width: 25%;
+    float: left;
+}
+
+.ajax-form-atr input[type="file"], .ajax-form-atr input[type="submit"] {
+  margin-top: 25px;
+}
+
+#new_link, #new_atr_link {
+  display: block;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.ajax-form-center {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* notice and alert */
+.alert {
+  color: #cd5555;
+}
+
+.notice {
+  color: #61B329;
+}
+
+/* Custom table styling */
+
+ .table-block{
+  max-width: 800px;
+  margin: 0 auto;
+ }
+
+.table td, th {
+  text-align: center;
+}
+
+/* Moving Links */
+.move_link {
+  float:right;
+  margin: 1%;
+}
+
+/* Clearing float */
+
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}

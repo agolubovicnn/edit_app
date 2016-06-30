@@ -1,0 +1,6 @@
+<td><%= image_tag for_attribute.image.url(:thumb) if for_attribute.image? %></td>
+<td><strong><%= for_attribute.value %></strong></td>
+<td><strong><%= for_attribute.name %></strong></td>
+<td><%= link_to 'Delete', character_for_attribute_path(@character, for_attribute) , data: {confirm: "Are You Sure?"}, method: :delete,  class: 'btn btn-danger', remote: true %>
+</td>
+<td><%= link_to 'Edit', edit_character_for_attribute_path(@character, for_attribute) , role: 'button', class: 'btn btn-info', remote: true %></td>

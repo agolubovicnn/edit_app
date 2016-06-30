@@ -1,0 +1,16 @@
+<%= form_for([@character, @for_attribute], html: {  multipart: true, remote: true  }, remote: false) do |f| %>
+<div class="field">
+  <%= f.label :name, 'Attribute Name' %><br>
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :value %><br>
+  <%= f.number_field :value %>
+</div>
+<div class="field">
+  <%= f.file_field :image %>
+</div>
+<div class="actions">
+  <%= f.submit class: "btn btn-warning" %>
+</div>
+<% end %>

@@ -1,0 +1,24 @@
+<%= form_for(@character, html: {  multipart: true  }) do |f| %>
+<% if @character.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@character.errors.count, "error") %> prohibited this character from being saved:</h2>
+
+  <ul>
+    <% @character.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :char_name, 'Character Name', class: "form-group" %><br>
+  <%= f.text_field :char_name, class: "form-control" %>
+</div>
+
+<%= f.file_field :image %>
+
+<div class="actions">
+  <%= f.submit class: "btn btn-block btn-warning" %>
+</div>
+<% end %>

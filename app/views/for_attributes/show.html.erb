@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @for_attribute.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @for_attribute.value %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @for_attribute.image %>
+</p>
+
+<p>
+  <strong>Character:</strong>
+  <%= @for_attribute.character %>
+</p>
+
+<%= link_to 'Edit', edit_for_attribute_path(@for_attribute) %> |
+<%= link_to 'Back', for_attributes_path %>
