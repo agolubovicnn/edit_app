@@ -6,7 +6,7 @@ class ForAttribute < ActiveRecord::Base
   validate :image_size
 
   private
-    
+
       # Validates the size of an uploaded picture.
     def image_size
       if image.size > 5.megabytes
