@@ -2,6 +2,7 @@ class ForAttributesController < ApplicationController
   before_filter :authenticate_user!
   before_action :set_for_attribute, only: [:show, :edit, :update, :destroy]
   before_action :set_character, only: [:index, :show, :new, :edit, :create, :update, :destroy]
+  before_action :require_permission, only: [:destroy, :edit, :update]
   respond_to :html, :js
 
   def index
@@ -65,7 +66,7 @@ class ForAttributesController < ApplicationController
   private
 
   def set_character
-    @character = Character.find(params[:character_id])
+    @character = current_user.characters.find(params[:character_id])
   end
 
   def set_for_attribute
@@ -75,4 +76,10 @@ class ForAttributesController < ApplicationController
   def for_attribute_params
     params.require(:for_attribute).permit(:name, :value, :image)
   end
+
+  def require_permission
+      unless current_user == @character.user
+        redirect_to(root_path,:notice=>"You can only edit/delete attributes of the characters you created")
+      end
+    end
 end
