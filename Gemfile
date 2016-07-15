@@ -19,8 +19,6 @@ gem 'json', '1.8.3'
 gem 'remotipart', '~> 1.2'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3.22'
-gem "figaro"
-gem "fog"
 
 group :assets do
   gem 'twitter-bootstrap-rails'
