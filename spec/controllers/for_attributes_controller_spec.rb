@@ -52,7 +52,12 @@ RSpec.describe ForAttributesController, :type => :controller do
     end
   end
 
-
+  #describe "GET new" do
+    #it "assigns a new for_attribute as @for_attribute" do
+      #get :new, {}, valid_session
+      #expect(assigns(:for_attribute)).to be_a_new(ForAttribute)
+    #end
+  #end
 
   describe "GET edit" do
     it "assigns the requested for_attribute as @for_attribute" do
@@ -61,4 +66,94 @@ RSpec.describe ForAttributesController, :type => :controller do
       expect(assigns(:for_attribute)).to eq(for_attribute)
     end
   end
+
+  describe "POST create" do
+    describe "with valid params" do
+      it "creates a new ForAttribute" do
+        expect {
+          post :create, {:for_attribute => valid_attributes}, valid_session
+        }.to change(ForAttribute, :count).by(1)
+      end
+
+      it "assigns a newly created for_attribute as @for_attribute" do
+        post :create, {:for_attribute => valid_attributes}, valid_session
+        expect(assigns(:for_attribute)).to be_a(ForAttribute)
+        expect(assigns(:for_attribute)).to be_persisted
+      end
+
+      it "redirects to the created for_attribute" do
+        post :create, {:for_attribute => valid_attributes}, valid_session
+        expect(response).to redirect_to(ForAttribute.last)
+      end
+    end
+
+    describe "with invalid params" do
+      it "assigns a newly created but unsaved for_attribute as @for_attribute" do
+        post :create, {:for_attribute => invalid_attributes}, valid_session
+        expect(assigns(:for_attribute)).to be_a_new(ForAttribute)
+      end
+
+      it "re-renders the 'new' template" do
+        post :create, {:for_attribute => invalid_attributes}, valid_session
+        expect(response).to render_template("new")
+      end
+    end
+  end
+
+  describe "PUT update" do
+    describe "with valid params" do
+      let(:new_attributes) {
+        skip("Add a hash of attributes valid for your model")
+      }
+
+      it "updates the requested for_attribute" do
+        for_attribute = ForAttribute.create! valid_attributes
+        put :update, {:id => for_attribute.to_param, :for_attribute => new_attributes}, valid_session
+        for_attribute.reload
+        skip("Add assertions for updated state")
+      end
+
+      it "assigns the requested for_attribute as @for_attribute" do
+        for_attribute = ForAttribute.create! valid_attributes
+        put :update, {:id => for_attribute.to_param, :for_attribute => valid_attributes}, valid_session
+        expect(assigns(:for_attribute)).to eq(for_attribute)
+      end
+
+      it "redirects to the for_attribute" do
+        for_attribute = ForAttribute.create! valid_attributes
+        put :update, {:id => for_attribute.to_param, :for_attribute => valid_attributes}, valid_session
+        expect(response).to redirect_to(for_attribute)
+      end
+    end
+
+    describe "with invalid params" do
+      it "assigns the for_attribute as @for_attribute" do
+        for_attribute = ForAttribute.create! valid_attributes
+        put :update, {:id => for_attribute.to_param, :for_attribute => invalid_attributes}, valid_session
+        expect(assigns(:for_attribute)).to eq(for_attribute)
+      end
+
+      it "re-renders the 'edit' template" do
+        for_attribute = ForAttribute.create! valid_attributes
+        put :update, {:id => for_attribute.to_param, :for_attribute => invalid_attributes}, valid_session
+        expect(response).to render_template("edit")
+      end
+    end
+  end
+
+  describe "DELETE destroy" do
+    it "destroys the requested for_attribute" do
+      for_attribute = ForAttribute.create! valid_attributes
+      expect {
+        delete :destroy, {:id => for_attribute.to_param}, valid_session
+      }.to change(ForAttribute, :count).by(-1)
+    end
+
+    it "redirects to the for_attributes list" do
+      for_attribute = ForAttribute.create! valid_attributes
+      delete :destroy, {:id => for_attribute.to_param}, valid_session
+      expect(response).to redirect_to(for_attributes_url)
+    end
+  end
+
 end

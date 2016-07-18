@@ -1,0 +1,16 @@
+Feature: Manage Users
+  In order to make a Editor application
+  I want to sign in
+
+  Scenario: Crating Valid Profile
+  	Given I am on the home page
+  	When I click "Sign up now" button
+  	Then I should see "Welcome, Sign Up to start your Edit App!"
+  	And I fill "ExampleName" as User name
+  	And I fill "example@example.com" as Email
+  	And I fill "example1234" as Password
+  	And I fill "example1234" as Password confirmation
+  	And I click "Sign up" button
+  	Then I should see "Welcome! You have signed up successfully."
+
+  
