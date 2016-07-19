@@ -1,35 +1,44 @@
-Given(/^I am on the home page$/) do
+
+Given(/^I am not logged in$/) do
+  current_driver = Capybara.current_driver
+end
+
+When(/^I am on the home page$/) do
   visit root_path
 end
 
-When(/^I click "Sign up now" button$/) do
-  click_on "Sign up now!"
+Then(/^I should see "(.*?)"$/) do |text|
+  page.should have_content(text)
 end
 
-Then(/^I should see "Welcome, Sign Up to start your Edit App!$/) do
-  expect(page).to have_content("You need to sign in or sign up before continuing")
+Then(/^I should see "(.*?)" link$/) do |link_text|
+  page.should have_content(link_text)
 end
 
-Then(/^I fill "(.*?)" as User name$/) do |user_name|
-  fill_in "User name", :with => user_name
+Given(/^I am logged in as user$/) do
+	User.create!(email: "user@email.com", password: "asdasdasd")
 end
 
-Then(/^I fill "(.*?)" as Email$/) do |email|
-  fill_in "Email", :with => email
+When(/^I try to sign up$/) do
+  visit root_path
 end
 
-Then(/^I fill "(.*?)" as Password$/) do |password|
-  fill_in "Password", :with => password
+When(/^I push sign up link$/) do
+ click_link('Sign up')
 end
 
-Then(/^I fill "(.*?)" as Password confirmation$/) do |password_confirmation|
-  fill_in "Password confirmation", :with => password_confirmation
+When(/^I enter my "(.*?)", "(.*?)", "(.*?)" and "(.*?)"$/) do |username, email, password,
+ password_confirmation|
+ fill_in('Username', :with => 'Example')
+ fill_in('Email', :with => 'example@example.org')
+ fill_in('Password', :with => 'example')
+ fill_in('Password confirmation', :with => 'example')
 end
 
-Then(/^I click "Sign up" button$/) do
-  click_on "Sign up"
+When(/^I push sign up button$/) do
+ click_button('Sign up')
 end
 
-Then(/^I should see "Welcome! You have signed up successfully."$/) do
-  expect(page).to have_content("Welcome! You have signed up successfully.")
+Then(/^I am log in as user$/) do
+ page.should have_content("Welcome! You have signed up successfully")
 end
